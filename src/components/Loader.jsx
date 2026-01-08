@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
@@ -16,12 +16,12 @@ const Loader = () => {
               key={i}
               className="w-2 h-2 bg-light rounded-full"
               initial={{ opacity: 0.1 }}
-              animate={{ opacity: (i % 3 === 0) ? 0.8 : 0.2 }}
+              animate={{ opacity: i % 3 === 0 ? 0.8 : 0.2 }}
               transition={{
                 duration: 1.2,
                 repeat: Infinity,
                 repeatType: "reverse",
-                delay: i * 0.05
+                delay: i * 0.05,
               }}
             />
           ))}
@@ -35,7 +35,7 @@ const Loader = () => {
             duration: 1.5,
             ease: "easeInOut",
             repeat: Infinity,
-            repeatType: "reverse"
+            repeatType: "reverse",
           }}
         />
         <motion.p
@@ -44,7 +44,7 @@ const Loader = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          NITHIN MANDA
+          Ritika Kumari
         </motion.p>
       </motion.div>
     </div>

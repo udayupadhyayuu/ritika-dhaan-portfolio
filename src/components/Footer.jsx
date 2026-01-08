@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,7 +16,9 @@ const Footer = () => {
           >
             <div className="flex items-center mb-2">
               <div className="w-[2px] h-6 bg-light mr-2"></div>
-              <span className="font-mono text-lg tracking-wider">NITHIN MANDA</span>
+              <span className="font-mono text-lg tracking-wider">
+                Ritika Kumari
+              </span>
             </div>
             <p className="text-muted text-sm">
               Tech enthusiast building innovative solutions
@@ -30,10 +32,30 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex space-x-6"
           >
-            <a href="#home" className="text-muted hover:text-light transition-colors">Home</a>
-            <a href="#projects" className="text-muted hover:text-light transition-colors">Projects</a>
-            <a href="#skills" className="text-muted hover:text-light transition-colors">Skills</a>
-            <a href="#contact" className="text-muted hover:text-light transition-colors">Contact</a>
+            <a
+              href="#home"
+              className="text-muted hover:text-light transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="#projects"
+              className="text-muted hover:text-light transition-colors"
+            >
+              Projects
+            </a>
+            <a
+              href="#skills"
+              className="text-muted hover:text-light transition-colors"
+            >
+              Skills
+            </a>
+            <a
+              href="#contact"
+              className="text-muted hover:text-light transition-colors"
+            >
+              Contact
+            </a>
           </motion.div>
         </div>
 
@@ -45,11 +67,8 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="text-sm text-muted mb-4 md:mb-0"
           >
-            © {currentYear} Nithin Manda. All rights reserved.
+            © {currentYear} Ritika Kumari. All rights reserved.
           </motion.p>
-
-
-
         </div>
       </div>
     </footer>

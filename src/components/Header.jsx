@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -10,15 +10,18 @@ const Header = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ['Home', 'Projects', 'Skills', 'Education', 'Contact'];
+  const navItems = ["Home", "Projects", "Skills", "Education", "Contact"];
 
   const headerVariants = {
     initial: { y: -100 },
-    animate: { y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
+    animate: {
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 20 },
+    },
   };
 
   const navItemVariants = {
@@ -26,20 +29,21 @@ const Header = () => {
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.1 + 0.2, duration: 0.4 }
-    })
+      transition: { delay: i * 0.1 + 0.2, duration: 0.4 },
+    }),
   };
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0 ${scrolled ? 'glassmorphism-no-border py-3' : 'bg-transparent py-6'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0 ${
+        scrolled ? "glassmorphism-no-border py-3" : "bg-transparent py-6"
+      }`}
       variants={headerVariants}
       initial="initial"
       animate="animate"
       style={{
-        borderWidth: 0,  // Explicitly setting border width to 0
-        borderStyle: 'none' // Ensuring no border style
+        borderWidth: 0, // Explicitly setting border width to 0
+        borderStyle: "none", // Ensuring no border style
       }}
     >
       <div className="container-custom flex justify-between items-center">
@@ -50,7 +54,7 @@ const Header = () => {
           className="flex items-center"
         >
           <div className="w-[2px] h-6 bg-light mr-2"></div>
-          <span className="font-mono text-lg tracking-wider">NM</span>
+          <span className="font-mono text-lg tracking-wider">RK</span>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -85,7 +89,9 @@ const Header = () => {
           <div className="w-6 flex flex-col space-y-1.5">
             <motion.div
               className="w-full h-px bg-light"
-              animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              animate={
+                mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }
+              }
               transition={{ duration: 0.3 }}
             />
             <motion.div
@@ -94,7 +100,9 @@ const Header = () => {
             />
             <motion.div
               className="w-full h-px bg-light"
-              animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              animate={
+                mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }
+              }
               transition={{ duration: 0.3 }}
             />
           </div>
@@ -112,7 +120,7 @@ const Header = () => {
               style={{ borderWidth: 0 }}
             >
               <ul className="flex flex-col space-y-4">
-                {navItems.map(item => (
+                {navItems.map((item) => (
                   <motion.li
                     key={item}
                     whileHover={{ x: 5 }}
