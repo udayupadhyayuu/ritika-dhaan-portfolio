@@ -57,7 +57,7 @@ const Contact = () => {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      to_email: "goudnithin77@gmail.com",
+      to_email: "ritikakumar0503@gmail.com",
       date_time: formattedDate,
       user_login: "nithinmanda",
     };
@@ -184,10 +184,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium text-sm mb-1">Phone</h4>
                   <a
-                    href="tel:+919912491246"
+                    href="tel:+918826661964"
                     className="text-muted hover:text-light transition-colors"
                   >
-                    +91 9912491246
+                    +91 8826661964
                   </a>
                 </div>
               </motion.div>
