@@ -136,6 +136,7 @@ const Avatar = () => {
       transform: avatarTiltTransform,
       transition: "transform 0.1s ease-out",
     },
+
     head: {
       width: HEAD_WIDTH,
       height: HEAD_HEIGHT,
@@ -147,72 +148,88 @@ const Avatar = () => {
       transform: "translateX(-50%)",
       zIndex: 2,
     },
+
+    /* ================= CAP ================= */
     hair: {
       width: 110,
-      height: 65, // Changed from 60
-      backgroundColor: "#202020",
-      borderRadius: "50px 50px 20px 20px", // Changed from 10px 10px
+      height: 65,
+      backgroundColor: "var(--avatar-cap)",
+      borderRadius: "50px 50px 20px 20px",
       position: "absolute",
-      top: 22, // Changed from 25
+      top: 22,
       left: "50%",
       transform: "translateX(-50%)",
       zIndex: 3,
-      borderTop: "2px solid #1a1a1a", // Added for definition
+
+      /* subtle definition like initial avatar */
+      boxShadow: "var(--avatar-cap-outline)",
+      borderTop: "1.5px solid var(--avatar-cap-edge)",
     },
+
     headphoneBand: {
       width: 130,
       height: 30,
-      backgroundColor: "#202020",
-      border: "3px solid #1a1a1a",
+      backgroundColor: "var(--avatar-cap)",
       borderRadius: "30px 30px 0 0",
       position: "absolute",
-      top: 12, // Changed from 15
+      top: 12,
       left: "50%",
       transform: "translateX(-50%)",
       zIndex: 4,
+
+      boxShadow: "var(--avatar-cap-outline)",
+      borderTop: "1.5px solid var(--avatar-cap-edge)",
     },
+
     leftEarcup: {
       width: 35,
       height: 45,
-      backgroundColor: "#252525",
-      border: "3px solid #1a1a1a",
-      borderRadius: "12px", // Changed from 10px
+      backgroundColor: "var(--avatar-cap)",
+      borderRadius: "12px",
       position: "absolute",
-      top: 50, // Changed from 55
+      top: 50,
       left: 10,
       zIndex: 5,
+
+      boxShadow: "var(--avatar-cap-outline)",
     },
+
     rightEarcup: {
       width: 35,
       height: 45,
-      backgroundColor: "#252525",
-      border: "3px solid #1a1a1a",
-      borderRadius: "12px", // Changed from 10px
+      backgroundColor: "var(--avatar-cap)",
+      borderRadius: "12px",
       position: "absolute",
-      top: 50, // Changed from 55
+      top: 50,
       right: 10,
       zIndex: 5,
+
+      boxShadow: "var(--avatar-cap-outline)",
     },
+
+    /* ================= EYES ================= */
     leftEyeSocket: {
       width: EYE_SOCKET_WIDTH,
       height: EYE_SOCKET_HEIGHT,
-      backgroundColor: "#f0f0f0", // Changed from white
+      backgroundColor: "#f0f0f0",
       borderRadius: "40%",
       position: "absolute",
       top: `${EYE_SOCKET_TOP_PERCENT * 100}%`,
       left: `${EYE_SOCKET_LEFT_PERCENT * 100}%`,
       zIndex: 1,
     },
+
     rightEyeSocket: {
       width: EYE_SOCKET_WIDTH,
       height: EYE_SOCKET_HEIGHT,
-      backgroundColor: "#f0f0f0", // Changed from white
+      backgroundColor: "#f0f0f0",
       borderRadius: "40%",
       position: "absolute",
       top: `${EYE_SOCKET_TOP_PERCENT * 100}%`,
       right: `${EYE_SOCKET_RIGHT_PERCENT * 100}%`,
       zIndex: 1,
     },
+
     pupil: {
       width: PUPIL_WIDTH,
       height: PUPIL_HEIGHT,
@@ -221,18 +238,22 @@ const Avatar = () => {
       position: "absolute",
       top: "50%",
       left: "50%",
-      transition: "transform 0.03s linear", // Added for smoothness
+      transition: "transform 0.03s linear",
     },
+
+    /* ================= CLOTHES ================= */
     shoulders: {
       width: 160,
       height: 80,
-      backgroundColor: "#202020",
+      backgroundColor: "var(--avatar-clothes)",
       borderRadius: "30px 30px 0 0",
       position: "absolute",
       bottom: 0,
       left: "50%",
       transform: "translateX(-50%)",
       zIndex: 1,
+
+      boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.15)",
     },
   };
 

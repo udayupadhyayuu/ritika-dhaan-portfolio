@@ -4,15 +4,64 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================
+   LIGHT MODE (DEFAULT)
+   ===================================================== */
 :root {
-  --scrollbar-thumb: #3a3a3a;
-  --scrollbar-track: #101010;
+  --primary: #ffffff;
+  --secondary: #f5f5f5;
+  --accent: #0f0f0f;
+  --muted: #6b7280;
+  --light: #1f2937;
+
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-track: #f1f1f1;
+
+  /* ===== AVATAR (LIGHT MODE) ===== */
+  --avatar-clothes: #202020;          /* dark clothes */
+  --avatar-cap: #202020;              /* black cap */
+
+  /* subtle white border on dark shapes */
+  --avatar-cap-border: rgba(255,255,255,0.22);
+  --avatar-cap-edge: rgba(255,255,255,0.28);
+  --avatar-cap-outline: inset 0 0 0 1px rgba(255,255,255,0.22);
+
+  --avatar-clothes-outline: inset 0 0 0 1px rgba(255,255,255,0.18);
 }
 
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+html.dark {
+  --primary: #101010;
+  --secondary: #1a1a1a;
+  --accent: #f5f5f5;
+  --muted: #717171;
+  --light: #e0e0e0;
+
+  --scrollbar-thumb: #3a3a3a;
+  --scrollbar-track: #101010;
+
+  /* ===== AVATAR (DARK MODE) ===== */
+  --avatar-clothes: #ffffff;          /* white clothes */
+  --avatar-cap: #ffffff;              /* white cap */
+
+  /* subtle dark border on white shapes */
+  --avatar-cap-border: rgba(0,0,0,0.38);
+  --avatar-cap-edge: rgba(0,0,0,0.45);
+  --avatar-cap-outline: inset 0 0 0 1px rgba(0,0,0,0.38);
+
+  --avatar-clothes-outline: inset 0 0 0 1px rgba(0,0,0,0.30);
+}
+
+/* =====================================================
+   GLOBAL RESET
+   ===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html {
@@ -22,12 +71,15 @@ html {
 }
 
 body {
-  background-color: #101010;
-  color: #f5f5f5;
+  background-color: var(--primary);
+  color: var(--accent);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -41,89 +93,152 @@ body {
   border-radius: 4px;
 }
 
+/* =====================================================
+   GLASS EFFECT
+   ===================================================== */
 .glassmorphism-no-border {
-  /* Copy all properties from your glassmorphism class except border-related ones */
-  background: rgba(255, 255, 255, 0.1); /* example background */
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border: none !important;
-  box-shadow: none; /* If the border effect comes from box-shadow */
+  box-shadow: none;
 }
 
-/* Nothing-inspired dotted text */
+/* =====================================================
+   TEXT STYLES
+   ===================================================== */
 .dotted-text {
-  font-family: 'Inter', sans-serif;
   letter-spacing: 0.05em;
   font-weight: 700;
 }
 
 .dotted-text .dot {
-  display: inline-block;
   width: 5px;
   height: 5px;
-  background-color: #f5f5f5;
+  background-color: var(--accent);
   border-radius: 50%;
   margin: 0 2px;
-  vertical-align: middle;
 }
 
 .nothing-headline {
-  display: inline-grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  gap: 1px;
   letter-spacing: -0.02em;
 }
 
 .pixelated-text {
   font-family: monospace;
   position: relative;
-  display: inline-block;
-  overflow: visible;
 }
 
 .pixelated-text::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent 50%, rgba(245, 245, 245, 0.15) 50%);
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%
+  );
   background-size: 4px 4px;
   pointer-events: none;
   opacity: 0.4;
 }
 
+/* =====================================================
+   TAILWIND COMPONENTS
+   ===================================================== */
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .section-padding {
     @apply py-16 md:py-24;
   }
-  
+
   .btn {
     @apply px-6 py-2 rounded-sm font-medium transition-all duration-300;
   }
-  
+
   .btn-primary {
-    @apply bg-light text-primary hover:bg-opacity-90;
+    @apply bg-light text-primary;
   }
-  
+
   .btn-outline {
-    @apply border border-light text-light hover:bg-light hover:bg-opacity-10;
+    @apply border border-light text-light;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-light to-muted;
   }
-  
-  /* Nothing-inspired button */
+
   .nothing-btn {
-    @apply inline-flex items-center px-5 py-2 border border-light border-opacity-30 bg-transparent hover:bg-light hover:bg-opacity-5 transition-all duration-300 font-mono text-sm tracking-wider;
+    @apply inline-flex items-center px-5 py-2 border border-light border-opacity-30 font-mono text-sm;
   }
-  
+
   .social-icon {
-    @apply w-6 h-6 text-muted hover:text-light transition-colors duration-300;
+    @apply w-6 h-6 text-muted hover:text-light transition;
   }
+}
+
+/* =====================================================
+   THEME TOGGLE (UNCHANGED)
+   ===================================================== */
+.theme-toggle {
+  position: relative;
+}
+
+.theme-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.theme-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-label .icon {
+  font-size: 13px;
+  z-index: 1;
+}
+
+.theme-label .sun {
+  color: #f39c12;
+}
+
+.theme-label .moon {
+  color: #f1c40f;
+}
+
+.theme-label .ball {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.theme-checkbox:checked + .theme-label .ball {
+  transform: translateX(24px);
+}
+
+/* =====================================================
+   DIVIDER
+   ===================================================== */
+:root {
+  --divider: rgba(0, 0, 0, 0.04);
+}
+
+html.dark {
+  --divider: rgba(255, 255, 255, 0.03);
 }

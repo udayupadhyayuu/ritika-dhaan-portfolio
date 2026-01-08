@@ -112,7 +112,6 @@ const Skills = () => {
   const skillVariants = {
     hover: {
       scale: 1.05,
-      backgroundColor: "rgba(255,255,255,0.1)",
       transition: { duration: 0.2 },
     },
   };
@@ -154,7 +153,12 @@ const Skills = () => {
                 {category.skills.map((skill, j) => (
                   <motion.span
                     key={j}
-                    className="text-sm bg-secondary px-3 py-1 rounded-sm cursor-pointer"
+                    className="
+    text-sm px-3 py-1 rounded-sm cursor-pointer
+    bg-secondary
+    transition-colors duration-200
+    hover:bg-accent hover:text-primary
+  "
                     variants={skillVariants}
                     whileHover="hover"
                   >
