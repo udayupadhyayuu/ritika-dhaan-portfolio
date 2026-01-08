@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 import Avatar from "./Avatar"; // Added import
 
 const DottedText = ({ text }) => {
-  const letters = text.split("");
-
-  return <div className="pixelated-text">{letters}</div>;
+  return (
+    <div className="pixelated-text">
+      {text.split("").map((char, index) => (
+        <span key={index}>{char}</span>
+      ))}
+    </div>
+  );
 };
 
 const Hero = () => {
@@ -131,7 +135,7 @@ const Hero = () => {
               <DottedText text="RITIKA KUMARI" />
             </div>
             <div className="mt-3 text-gradient">
-              Senior Newtwork & DevOps Engineer
+              Cloud • Network • DevOps Engineer
             </div>
           </motion.h1>
 
@@ -139,8 +143,10 @@ const Hero = () => {
             variants={childVariants}
             className="text-muted text-lg md:text-xl mb-10 max-w-xl"
           >
-            Solving real-world problems through innovative solutions. Eager to
-            apply technical expertise and creativity in dynamic environments.
+            Designing, automating, and securing scalable cloud and network
+            infrastructure. Experienced in CI/CD, monitoring, and
+            high-availability systems with a strong focus on reliability and
+            security.
           </motion.p>
 
           {/* Social media and resume section */}
