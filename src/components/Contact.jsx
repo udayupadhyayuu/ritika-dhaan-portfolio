@@ -216,7 +216,7 @@ const Contact = () => {
                   <div className="flex gap-3 mt-2">
                     {/* GitHub */}
                     <a
-                      href="https://github.com/nithinmanda"
+                      href="https://github.com/udayupadhyayuu"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-80 transition-opacity"
@@ -238,7 +238,7 @@ const Contact = () => {
 
                     {/* LinkedIn */}
                     <a
-                      href="https://www.linkedin.com/in/nithin-manda"
+                      href="https://www.linkedin.com/in/ritikakumar-rk"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-80 transition-opacity"
@@ -260,7 +260,7 @@ const Contact = () => {
 
                     {/* Twitter */}
                     <a
-                      href="https://x.com/kaushal_dev_"
+                      href="_#"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-80 transition-opacity"

@@ -59,7 +59,7 @@ const Footer = () => {
           >
             {/* GitHub */}
             <a
-              href="https://github.com/ritikakumar"
+              href="https://github.com/udayupadhyayuu"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-light/20 transition-all"
@@ -76,7 +76,7 @@ const Footer = () => {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/ritika-kumari/"
+              href="https://www.linkedin.com/in/ritikakumar-rk"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-light/20 transition-all"
@@ -93,7 +93,7 @@ const Footer = () => {
 
             {/* X / Twitter */}
             <a
-              href="https://x.com/ritika_dev"
+              href="_#"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-light/20 transition-all"

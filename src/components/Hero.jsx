@@ -147,7 +147,7 @@ const Hero = () => {
             className="hidden sm:flex flex-wrap gap-6 mb-12"
           >
             <a
-              href="https://github.com/nithinmanda"
+              href="https://github.com/udayupadhyayuu"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted hover:text-light transition-colors"
@@ -164,7 +164,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://leetcode.com/u/goudnithin77/"
+              href="_#"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted hover:text-light transition-colors"
@@ -178,7 +178,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/sri-ganesh-k-5706ab269/"
+              href="https://www.linkedin.com/in/ritikakumar-rk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted hover:text-light transition-colors"
