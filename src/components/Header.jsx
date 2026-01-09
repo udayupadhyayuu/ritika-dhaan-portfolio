@@ -26,10 +26,10 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 shadow-sm ${
         scrolled ? "glassmorphism-no-border" : "bg-transparent"
       }`}
-      style={{ paddingTop: "28px" }} // height of your top bar
+      style={{ paddingTop: "10px" }} // height of your top bar
     >
       {/* ================= HEADER ROW ================= */}
       <div className="h-20 flex items-center px-6 md:px-8 lg:px-12">
