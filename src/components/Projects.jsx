@@ -18,7 +18,6 @@ const Projects = () => {
         "TCP/IP",
         "Firewall",
       ],
-      image: "/images/enterprise-network.png",
       highlights: [
         "Lemon Tree Hotel",
         "goSTOPS Hostels",
@@ -39,7 +38,6 @@ const Projects = () => {
         "IP Planning",
         "Network Security",
       ],
-      image: "/images/yourspace-network.png",
       highlights: [
         "Pan-India network rollout",
         "Standardized network architecture",
@@ -58,7 +56,6 @@ const Projects = () => {
         "System Monitoring",
         "Shell Scripting",
       ],
-      image: "/images/linux-admin.png",
       highlights: [
         "Configured and maintained production servers",
         "Handled access control and permissions",
@@ -71,7 +68,6 @@ const Projects = () => {
       description:
         "Deployed and managed cloud-based workloads on AWS EC2. Configured security groups, networking rules, and basic monitoring to support reliable and secure application hosting.",
       tech: ["AWS EC2", "Security Groups", "Linux", "CloudWatch", "Networking"],
-      image: "/images/aws-ec2.png",
       highlights: [
         "Provisioned and managed EC2 instances",
         "Configured secure inbound and outbound access",
@@ -90,7 +86,6 @@ const Projects = () => {
         "Network Monitoring",
         "Scripting",
       ],
-      image: "/images/network-monitoring.png",
       highlights: [
         "Real-time offline detection for multiple sites",
         "Alerts via Telegram and email",
@@ -109,7 +104,6 @@ const Projects = () => {
         "Network Security",
         "Monitoring",
       ],
-      image: "/images/ap-controller.png",
       highlights: [
         "Centralized AP management for multiple locations",
         "Guest and corporate network segmentation",
@@ -119,19 +113,20 @@ const Projects = () => {
     },
   ];
 
-  // Auto-change project every 10 seconds
+  // Auto-slide every 5s
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveProject((prev) => (prev + 1) % projects.length);
-    }, 10000); // 10s
+    }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [projects.length]);
 
-  // Handle swipe
+  // Swipe handler
   const handleSwipe = (direction) => {
     if (direction === "left") {
       setActiveProject((prev) => (prev + 1) % projects.length);
-    } else if (direction === "right") {
+    }
+    if (direction === "right") {
       setActiveProject(
         (prev) => (prev - 1 + projects.length) % projects.length
       );
@@ -141,26 +136,27 @@ const Projects = () => {
   return (
     <section id="projects" className="section-padding bg-primary">
       <div className="container-custom">
+        {/* Header */}
         <div className="mb-8 md:mb-12">
           <h4 className="font-mono text-sm text-muted mb-2">PORTFOLIO</h4>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Featured Projects
           </h2>
-          <div className="w-16 h-[2px] bg-light opacity-50"></div>
+          <div className="w-16 h-[2px] bg-light opacity-50" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
-          {/* Project list */}
+          {/* LEFT LIST (DESKTOP) */}
           <div className="hidden md:block md:col-span-4">
             {projects.map((project, index) => (
               <div
                 key={index}
+                onClick={() => setActiveProject(index)}
                 className={`border-l border-muted p-4 cursor-pointer transition-all duration-300 ${
                   activeProject === index
                     ? "bg-secondary bg-opacity-30 border-opacity-100"
                     : "border-opacity-20"
                 }`}
-                onClick={() => setActiveProject(index)}
               >
                 <h3
                   className={`font-medium text-sm mb-1 ${
@@ -176,7 +172,7 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Project details */}
+          {/* RIGHT CARD */}
           <div className="col-span-1 md:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div
@@ -185,7 +181,6 @@ const Projects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
-                className="bg-secondary bg-opacity-20 p-4 md:p-6 border border-muted border-opacity-10"
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
@@ -193,12 +188,13 @@ const Projects = () => {
                   if (info.offset.x < -50) handleSwipe("left");
                   if (info.offset.x > 50) handleSwipe("right");
                 }}
+                className="bg-secondary bg-opacity-20 p-4 md:p-6 border border-muted border-opacity-10"
               >
                 <h3 className="text-lg md:text-xl font-semibold mb-3">
                   {projects[activeProject].title}
                 </h3>
 
-                {/* Smooth progress bar */}
+                {/* Progress bar */}
                 <motion.div className="h-1 bg-muted rounded mb-4">
                   <motion.div
                     key={activeProject}
@@ -209,33 +205,37 @@ const Projects = () => {
                   />
                 </motion.div>
 
-                <p className="text-sm md:text-base text-muted mb-4 md:mb-6 leading-relaxed">
+                <p className="text-sm md:text-base text-muted mb-6 leading-relaxed">
                   {projects[activeProject].description}
                 </p>
 
-                <div className="mb-4 md:mb-6">
-                  <h4 className="text-xs md:text-sm font-mono text-light mb-2 md:mb-3">
+                {/* Highlights */}
+                <div className="mb-6">
+                  <h4 className="text-xs md:text-sm font-mono text-light mb-3">
                     KEY HIGHLIGHTS
                   </h4>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {projects[activeProject].highlights.map((highlight, i) => (
+                    {projects[activeProject].highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-light opacity-50 mt-1">→</span>
-                        <span className="text-xs md:text-sm">{highlight}</span>
+                        <span className="text-xs md:text-sm">{h}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
+                {/* Technologies (NO BORDER HERE) */}
                 <div>
-                  <h4 className="text-xs md:text-sm font-mono text-light mb-2 md:mb-3">
+                  <h4 className="text-xs md:text-sm font-mono text-light mb-3">
                     TECHNOLOGIES
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {projects[activeProject].tech.map((tech, i) => (
                       <span
-                        key={i}
-                        className="text-xs py-1 px-2 md:px-3 bg-primary border border-muted border-opacity-20 rounded-sm"
+                        className="text-xs py-1 px-2 md:px-3 
+             bg-primary 
+             border border-muted border-opacity-30 
+             rounded-sm"
                       >
                         {tech}
                       </span>
@@ -244,6 +244,22 @@ const Projects = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
+
+            {/* MOBILE DOTS */}
+            <div className="flex justify-center gap-2 mt-4 md:hidden">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveProject(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeProject === index
+                      ? "w-6 bg-light"
+                      : "w-2 bg-muted opacity-30"
+                  }`}
+                  aria-label={`Go to project ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
