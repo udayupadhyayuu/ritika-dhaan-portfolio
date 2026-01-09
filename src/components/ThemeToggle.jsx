@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 
 function ThemeToggle() {
-  const [dark, setDark] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  // 1️⃣ Default = light, unless user saved dark
+  const [dark, setDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
+  // 2️⃣ Apply theme + save choice
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
   return (
     <button
-      onClick={() => setDark(!dark)}
+      onClick={() => setDark((prev) => !prev)}
       className="font-mono text-xs px-3 py-1 border border-muted
                  text-muted hover:text-accent transition"
     >

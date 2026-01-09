@@ -99,7 +99,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-secondary">
+    <section id="contact" className="section-padding bg-primary">
       <div className="container-custom" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -294,7 +294,7 @@ const Contact = () => {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="bg-primary bg-opacity-40 border border-muted border-opacity-30 p-6"
+              className="bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-6"
             >
               <h3 className="text-xl font-medium mb-6">Send a Message</h3>
 
@@ -311,7 +311,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
+                  className="w-full bg-primary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
                   required
                 />
               </div>
@@ -329,7 +329,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
+                  className="w-full bg-primary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
                   required
                 />
               </div>
@@ -347,7 +347,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
+                  className="w-full bg-primary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
                   required
                 ></textarea>
               </div>

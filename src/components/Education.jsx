@@ -51,7 +51,7 @@ const Education = () => {
   };
 
   return (
-    <section id="experience" className="section-padding bg-primary">
+    <section id="experience" className="section-padding bg-secondary">
       <div className="container-custom" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const Education = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-14 border border-muted border-opacity-20 bg-secondary bg-opacity-30 p-6 rounded-lg"
+          className="mb-14 border border-muted border-opacity-20 bg-primary bg-opacity-30 p-6 rounded-lg"
         >
           <h3 className="text-xl font-medium mb-4 flex items-center">
             <div className="w-4 h-4 border border-light mr-3"></div>
@@ -79,7 +79,7 @@ const Education = () => {
           </h3>
 
           <div className="pl-6 border-l-2 border-muted border-opacity-30 relative">
-            <div className="absolute w-3 h-3 bg-primary border border-light rounded-full -left-[7px] top-1"></div>
+            <div className="absolute w-3 h-3 bg-secondary border border-light rounded-full -left-[7px] top-1"></div>
 
             <h4 className="text-lg font-medium">DevOps & Network Engineer</h4>
 
@@ -126,7 +126,7 @@ const Education = () => {
                   className="border-l-2 border-muted border-opacity-30 pl-6 relative"
                   variants={itemVariants}
                 >
-                  <div className="absolute w-3 h-3 bg-primary border border-light rounded-full -left-[7px] top-1"></div>
+                  <div className="absolute w-3 h-3 bg-secondary border border-light rounded-full -left-[7px] top-1"></div>
                   <h4 className="text-lg font-medium mb-1">
                     {edu.institution}
                   </h4>
@@ -167,7 +167,7 @@ const Education = () => {
             </ul>
 
             <motion.div
-              className="mt-8 p-4 border border-muted border-opacity-20 bg-secondary bg-opacity-30"
+              className="mt-8 p-4 border border-muted border-opacity-20 bg-primary bg-opacity-30"
               variants={itemVariants}
             >
               <h4 className="text-sm font-medium mb-2">Continuous Learning</h4>

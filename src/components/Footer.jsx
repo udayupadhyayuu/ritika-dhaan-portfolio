@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-primary py-12"
+      className="bg-secondary py-12"
       style={{ borderTop: "0.5px solid var(--divider)" }}
     >
       <div className="container-custom">
