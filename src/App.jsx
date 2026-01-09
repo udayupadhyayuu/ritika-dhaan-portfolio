@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ResumeRedirect from './components/ResumeRedirect.jsx';
-import { motion, AnimatePresence } from 'framer-motion';
-import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import Projects from './components/Projects.jsx';
-import Skills from './components/Skills.jsx';
-import Education from './components/Education.jsx';
-import Contact from './components/Contact.jsx';
-import Footer from './components/Footer.jsx';
-import Loader from './components/Loader.jsx';
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ResumeRedirect from "./components/ResumeRedirect.jsx";
+import { motion, AnimatePresence } from "framer-motion";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import Projects from "./components/Projects.jsx";
+import Skills from "./components/Skills.jsx";
+import Education from "./components/Education.jsx";
+import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
+import Loader from "./components/Loader.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,9 +42,9 @@ function App() {
                   <Header />
                   <main>
                     <Hero />
+                    <Education />
                     <Projects />
                     <Skills />
-                    <Education />
                     <Contact />
                   </main>
                   <Footer />
